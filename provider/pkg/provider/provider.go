@@ -36,7 +36,7 @@ func construct(ctx *pulumi.Context, typ, name string, inputs provider.ConstructI
 	}
 }
 
-// constructs an AWS instance of run my damn container
+// constructs an AWS instance of run my darn container
 func constructAWSInstance(ctx *pulumi.Context, name string, inputs provider.ConstructInputs,
 	options pulumi.ResourceOption) (*provider.ConstructResult, error) {
 

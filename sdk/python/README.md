@@ -1,4 +1,4 @@
-# Run My Damn Container
+# Run My Darn Container
 
 Run My Darn Container (RDC) is the multi cloud solution you've been waiting for. Deploy your container to the 3 major cloud providers with just a few lines of code.
 
