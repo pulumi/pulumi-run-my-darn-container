@@ -15,15 +15,15 @@ class InstallPluginCommand(install):
     def run(self):
         install.run(self)
         try:
-            check_call(['pulumi', 'plugin', 'install', 'resource', 'rdc', PLUGIN_VERSION])
+            check_call(['pulumi', 'plugin', 'install', 'resource', 'run-my-darn-container', PLUGIN_VERSION])
         except OSError as error:
             if error.errno == errno.ENOENT:
                 print(f"""
-                There was an error installing the rdc resource provider plugin.
+                There was an error installing the run-my-darn-container resource provider plugin.
                 It looks like `pulumi` is not installed on your system.
                 Please visit https://pulumi.com/ to install the Pulumi CLI.
                 You may try manually installing the plugin by running
-                `pulumi plugin install resource rdc {PLUGIN_VERSION}`
+                `pulumi plugin install resource run-my-darn-container {PLUGIN_VERSION}`
                 """)
             else:
                 raise
@@ -34,10 +34,10 @@ def readme():
         with open('README.md', encoding='utf-8') as f:
             return f.read()
     except FileNotFoundError:
-        return "rdc Pulumi Package - Development Version"
+        return "run-my-darn-container Pulumi Package - Development Version"
 
 
-setup(name='jaxxstorm_pulumi_rdc',
+setup(name='pulumi-run-my-darn-container',
       version=VERSION,
       long_description=readme(),
       long_description_content_type='text/markdown',
@@ -46,7 +46,7 @@ setup(name='jaxxstorm_pulumi_rdc',
       },
       packages=find_packages(),
       package_data={
-          'jaxxstorm_pulumi_rdc': [
+          'pulumi-run-my-darn-container': [
               'py.typed',
           ]
       },

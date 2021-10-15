@@ -6,7 +6,7 @@ import * as utilities from "./utilities";
 
 export class GCPInstance extends pulumi.ComponentResource {
     /** @internal */
-    public static readonly __pulumiType = 'rdc:index:GCPInstance';
+    public static readonly __pulumiType = 'run-my-darn-container:index:GCPInstance';
 
     /**
      * Returns true if the given object is an instance of GCPInstance.  This is designed to work even

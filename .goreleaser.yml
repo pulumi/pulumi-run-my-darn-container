@@ -1,26 +1,30 @@
 archives:
-- id: archive
-  name_template: '{{ .Binary }}-{{ .Tag }}-{{ .Os }}-{{ .Arch }}'
-artifactories:
-- name: lbriggs
-  mode: archive
-  target: "https://lbriggs.jfrog.io/artifactory/pulumi-packages/{{ .ProjectName }}/"
-  username: goreleaser
+  - id: archive
+    name_template: '{{ .Binary }}-{{ .Tag }}-{{ .Os }}-{{ .Arch }}'
+before:
+  hooks:
+    - make build_provider
+blobs:
+  - bucket: get.pulumi.com
+    folder: releases/plugins/
+    ids:
+      - archive
+    provider: s3
+    region: us-west-2
 builds:
-- binary: pulumi-resource-rdc
-  dir: provider
-  env:
-  - CGO_ENABLED=0
-  - GO111MODULE=on
-  goarch:
-  - amd64
-  goos:
-  - darwin
-  - windows
-  - linux
-  ldflags:
-  - -X github.com/jaxxstorm/pulumi-rdc/provider/pkg/version.Version={{.Tag }}
-  main: ./cmd/pulumi-resource-rdc/
+  - binary: pulumi-resource-run-my-darn-container
+    dir: provider
+    env:
+      - CGO_ENABLED=0
+    goarch:
+      - amd64
+    goos:
+      - darwin
+      - windows
+      - linux
+    ldflags:
+      - -X github.com/pulumi/pulumi-run-my-darn-container/provider/pkg/version.Version={{.Tag }}
+    main: ./cmd/pulumi-resource-run-my-darn-container/
 changelog:
   skip: true
 release:

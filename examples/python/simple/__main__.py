@@ -1,7 +1,7 @@
 """A Python Pulumi program"""
 
 import pulumi
-import jaxxstorm_pulumi_rdc as rdc
+import pulumi_run_my_darn_container as rdc
 
 aws = rdc.aws_instance(
     "aws-example",

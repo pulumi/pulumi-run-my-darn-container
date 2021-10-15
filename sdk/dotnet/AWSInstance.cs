@@ -7,9 +7,9 @@ using System.Collections.Immutable;
 using System.Threading.Tasks;
 using Pulumi.Serialization;
 
-namespace Pulumi.Rdc
+namespace Pulumi.RunMyDarnContainer
 {
-    [RdcResourceType("rdc:index:AWSInstance")]
+    [RunMyDarnContainerResourceType("run-my-darn-container:index:AWSInstance")]
     public partial class AWSInstance : Pulumi.ComponentResource
     {
         /// <summary>
@@ -27,7 +27,7 @@ namespace Pulumi.Rdc
         /// <param name="args">The arguments used to populate this resource's properties</param>
         /// <param name="options">A bag of options that control this resource's behavior</param>
         public AWSInstance(string name, AWSInstanceArgs args, ComponentResourceOptions? options = null)
-            : base("rdc:index:AWSInstance", name, args ?? new AWSInstanceArgs(), MakeResourceOptions(options, ""), remote: true)
+            : base("run-my-darn-container:index:AWSInstance", name, args ?? new AWSInstanceArgs(), MakeResourceOptions(options, ""), remote: true)
         {
         }
 

@@ -6,7 +6,7 @@ using System.IO;
 using System.Reflection;
 using Pulumi;
 
-namespace Pulumi.Rdc
+namespace Pulumi.RunMyDarnContainer
 {
     static class Utilities
     {
@@ -66,7 +66,7 @@ namespace Pulumi.Rdc
         static Utilities()
         {
             var assembly = typeof(Utilities).GetTypeInfo().Assembly;
-            using var stream = assembly.GetManifestResourceStream("Pulumi.Rdc.version.txt");
+            using var stream = assembly.GetManifestResourceStream("Pulumi.RunMyDarnContainer.version.txt");
             using var reader = new StreamReader(stream ?? throw new NotSupportedException("Missing embedded version.txt file"));
             version = reader.ReadToEnd().Trim();
             var parts = version.Split("\n");
@@ -78,9 +78,9 @@ namespace Pulumi.Rdc
         }
     }
 
-    internal sealed class RdcResourceTypeAttribute : Pulumi.ResourceTypeAttribute
+    internal sealed class RunMyDarnContainerResourceTypeAttribute : Pulumi.ResourceTypeAttribute
     {
-        public RdcResourceTypeAttribute(string type) : base(type, Utilities.Version)
+        public RunMyDarnContainerResourceTypeAttribute(string type) : base(type, Utilities.Version)
         {
         }
     }

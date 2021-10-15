@@ -6,7 +6,7 @@ import * as utilities from "./utilities";
 
 export class Provider extends pulumi.ProviderResource {
     /** @internal */
-    public static readonly __pulumiType = 'rdc';
+    public static readonly __pulumiType = 'run-my-darn-container';
 
     /**
      * Returns true if the given object is an instance of Provider.  This is designed to work even

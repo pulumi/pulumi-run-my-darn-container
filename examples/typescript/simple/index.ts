@@ -1,5 +1,5 @@
 import * as pulumi from "@pulumi/pulumi";
-import * as rdc from "@jaxxstorm/pulumi-rdc";
+import * as rdc from "@pulumi/run-my-darn-container";
 
 const awsapp = new rdc.AWSInstance("aws-example", {
     image: "public.ecr.aws/aws-containers/hello-app-runner:latest",

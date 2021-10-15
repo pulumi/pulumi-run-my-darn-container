@@ -13,13 +13,13 @@ _utilities.register(
     resource_modules="""
 [
  {
-  "pkg": "rdc",
+  "pkg": "run-my-darn-container",
   "mod": "index",
-  "fqn": "jaxxstorm_pulumi_rdc",
+  "fqn": "pulumi-run-my-darn-container",
   "classes": {
-   "rdc:index:AWSInstance": "AWSInstance",
-   "rdc:index:AzureInstance": "AzureInstance",
-   "rdc:index:GCPInstance": "GCPInstance"
+   "run-my-darn-container:index:AWSInstance": "AWSInstance",
+   "run-my-darn-container:index:AzureInstance": "AzureInstance",
+   "run-my-darn-container:index:GCPInstance": "GCPInstance"
   }
  }
 ]
@@ -27,9 +27,9 @@ _utilities.register(
     resource_packages="""
 [
  {
-  "pkg": "rdc",
-  "token": "pulumi:providers:rdc",
-  "fqn": "jaxxstorm_pulumi_rdc",
+  "pkg": "run-my-darn-container",
+  "token": "pulumi:providers:run-my-darn-container",
+  "fqn": "pulumi-run-my-darn-container",
   "class": "Provider"
  }
 ]

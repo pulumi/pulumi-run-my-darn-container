@@ -25,18 +25,18 @@ func construct(ctx *pulumi.Context, typ, name string, inputs provider.ConstructI
 	options pulumi.ResourceOption) (*provider.ConstructResult, error) {
 	// TODO: Add support for additional component resources here.
 	switch typ {
-	case "rdc:index:AWSInstance":
+	case "run-my-darn-container:index:AWSInstance":
 		return constructAWSInstance(ctx, name, inputs, options)
-	case "rdc:index:AzureInstance":
+	case "run-my-darn-container:index:AzureInstance":
 		return constructAzureInstance(ctx, name, inputs, options)
-	case "rdc:index:GCPInstance":
+	case "run-my-darn-container:index:GCPInstance":
 		return constructGCPInstance(ctx, name, inputs, options)
 	default:
 		return nil, errors.Errorf("unknown resource type %s", typ)
 	}
 }
 
-// constructs an AWS instance of run my damn container
+// constructs an AWS instance of run my darn container
 func constructAWSInstance(ctx *pulumi.Context, name string, inputs provider.ConstructInputs,
 	options pulumi.ResourceOption) (*provider.ConstructResult, error) {
 
