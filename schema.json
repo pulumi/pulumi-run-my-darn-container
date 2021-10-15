@@ -1,7 +1,7 @@
 {
-    "name": "rdc",
+    "name": "run-my-darn-container",
     "resources": {
-        "rdc:index:AWSInstance": {
+        "run-my-darn-container:index:AWSInstance": {
             "isComponent": true,
             "inputProperties": {
                 "image": {
@@ -29,7 +29,7 @@
                 "url"
             ]
         },
-        "rdc:index:AzureInstance": {
+        "run-my-darn-container:index:AzureInstance": {
             "isComponent": true,
             "inputProperties": {
                 "image": {
@@ -57,7 +57,7 @@
                 "url"
             ]
         },
-        "rdc:index:GCPInstance": {
+        "run-my-darn-container:index:GCPInstance": {
             "isComponent": true,
             "inputProperties": {
                 "image": {
@@ -98,11 +98,14 @@
                 "Pulumi.Aws": "4.*",
                 "Pulumi.AzureNative": "1.*",
                 "Pulumi.Gcp": "5.*"
+            },
+            "namespaces": {
+                "run-my-darn-container": "RunMyDarnContainer"
             }
         },
         "go": {
             "generateResourceContainerTypes": true,
-            "importBasePath": "github.com/jaxxsorm/pulumi-rdc/sdk/go/instance"
+            "importBasePath": "github.com/pulumi/pulumi-run-my-darn-container/sdk/go/container"
         },
         "nodejs": {
             "dependencies": {
@@ -113,10 +116,10 @@
             "devDependencies": {
                 "typescript": "^3.7.0"
             },
-            "packageName": "@jaxxstorm/pulumi-rdc"
+            "packageName": "@pulumi/run-my-darn-container"
         },
         "python": {
-            "packageName": "jaxxstorm_pulumi_rdc",
+            "packageName": "pulumi-run-my-darn-container",
             "requires": {
                 "pulumi": ">=3.0.0,<4.0.0",
                 "pulumi-aws": ">=4.0.0,<5.0.0",

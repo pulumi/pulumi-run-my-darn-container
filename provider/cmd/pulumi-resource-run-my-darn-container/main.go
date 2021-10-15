@@ -17,15 +17,11 @@
 package main
 
 import (
-	_ "embed"
-	"github.com/jaxxstorm/pulumi-rdc/pkg/provider"
-	"github.com/jaxxstorm/pulumi-rdc/pkg/version"
+	"github.com/pulumi/pulumi-run-my-darn-container/pkg/provider"
+	"github.com/pulumi/pulumi-run-my-darn-container/pkg/version"
 )
 
-var providerName = "rdc"
-
-//go:embed schema.json
-var pulumiSchema []byte
+var providerName = "run-my-darn-container"
 
 func main() {
 	provider.Serve(providerName, version.Version, pulumiSchema)

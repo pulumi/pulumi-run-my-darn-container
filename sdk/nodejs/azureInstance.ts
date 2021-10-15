@@ -6,7 +6,7 @@ import * as utilities from "./utilities";
 
 export class AzureInstance extends pulumi.ComponentResource {
     /** @internal */
-    public static readonly __pulumiType = 'rdc:index:AzureInstance';
+    public static readonly __pulumiType = 'run-my-darn-container:index:AzureInstance';
 
     /**
      * Returns true if the given object is an instance of AzureInstance.  This is designed to work even

@@ -19,25 +19,25 @@ const _module = {
     version: utilities.getVersion(),
     construct: (name: string, type: string, urn: string): pulumi.Resource => {
         switch (type) {
-            case "rdc:index:AWSInstance":
+            case "run-my-darn-container:index:AWSInstance":
                 return new AWSInstance(name, <any>undefined, { urn })
-            case "rdc:index:AzureInstance":
+            case "run-my-darn-container:index:AzureInstance":
                 return new AzureInstance(name, <any>undefined, { urn })
-            case "rdc:index:GCPInstance":
+            case "run-my-darn-container:index:GCPInstance":
                 return new GCPInstance(name, <any>undefined, { urn })
             default:
                 throw new Error(`unknown resource type ${type}`);
         }
     },
 };
-pulumi.runtime.registerResourceModule("rdc", "index", _module)
+pulumi.runtime.registerResourceModule("run-my-darn-container", "index", _module)
 
 import { Provider } from "./provider";
 
-pulumi.runtime.registerResourcePackage("rdc", {
+pulumi.runtime.registerResourcePackage("run-my-darn-container", {
     version: utilities.getVersion(),
     constructProvider: (name: string, type: string, urn: string): pulumi.ProviderResource => {
-        if (type !== "pulumi:providers:rdc") {
+        if (type !== "pulumi:providers:run-my-darn-container") {
             throw new Error(`unknown provider type ${type}`);
         }
         return new Provider(name, <any>undefined, { urn });

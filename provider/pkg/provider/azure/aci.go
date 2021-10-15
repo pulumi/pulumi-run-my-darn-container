@@ -27,7 +27,7 @@ func NewAci(ctx *pulumi.Context, name string, args *AciArgs, opts ...pulumi.Reso
 	var err error
 	component := &Aci{}
 
-	err = ctx.RegisterComponentResource("rdc:index:Aci", name, component, opts...)
+	err = ctx.RegisterComponentResource("run-my-darn-container:index:Aci", name, component, opts...)
 	if err != nil {
 		return nil, err
 	}

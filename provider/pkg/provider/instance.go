@@ -17,9 +17,9 @@ package provider
 import (
 	"strconv"
 
-	"github.com/jaxxstorm/pulumi-rdc/pkg/provider/aws"
-	"github.com/jaxxstorm/pulumi-rdc/pkg/provider/azure"
-	"github.com/jaxxstorm/pulumi-rdc/pkg/provider/gcp"
+	"github.com/pulumi/pulumi-run-my-darn-container/pkg/provider/aws"
+	"github.com/pulumi/pulumi-run-my-darn-container/pkg/provider/azure"
+	"github.com/pulumi/pulumi-run-my-darn-container/pkg/provider/gcp"
 
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
@@ -35,7 +35,7 @@ func NewAWSInstance(ctx *pulumi.Context,
 
 	component := &Instance{}
 
-	err = ctx.RegisterComponentResource("rdc:index:AWSInstance", name, component, opts...)
+	err = ctx.RegisterComponentResource("run-my-darn-container:index:AWSInstance", name, component, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -78,7 +78,7 @@ func NewAzureInstance(ctx *pulumi.Context,
 
 	component := &Instance{}
 
-	err = ctx.RegisterComponentResource("rdc:index:AzureInstance", name, component, opts...)
+	err = ctx.RegisterComponentResource("run-my-darn-container:index:AzureInstance", name, component, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -113,7 +113,7 @@ func NewGCPInstance(ctx *pulumi.Context,
 
 	component := &Instance{}
 
-	err = ctx.RegisterComponentResource("rdc:index:GCPInstance", name, component, opts...)
+	err = ctx.RegisterComponentResource("run-my-darn-container:index:GCPInstance", name, component, opts...)
 	if err != nil {
 		return nil, err
 	}

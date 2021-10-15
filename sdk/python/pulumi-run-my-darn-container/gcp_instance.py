@@ -129,7 +129,7 @@ class GCPInstance(pulumi.ComponentResource):
             __props__.__dict__["port"] = port
             __props__.__dict__["url"] = None
         super(GCPInstance, __self__).__init__(
-            'rdc:index:GCPInstance',
+            'run-my-darn-container:index:GCPInstance',
             resource_name,
             __props__,
             opts,

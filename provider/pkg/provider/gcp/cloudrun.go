@@ -27,7 +27,7 @@ func NewCloudRun(ctx *pulumi.Context, name string, args *CloudRunArgs, opts ...p
 	var err error
 	component := &CloudRun{}
 
-	err = ctx.RegisterComponentResource("rdc:index:CloudRun", name, component, opts...)
+	err = ctx.RegisterComponentResource("run-my-darn-container:index:CloudRun", name, component, opts...)
 	if err != nil {
 		return nil, err
 	}

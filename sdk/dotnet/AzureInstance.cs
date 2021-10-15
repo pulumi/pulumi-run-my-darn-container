@@ -7,9 +7,9 @@ using System.Collections.Immutable;
 using System.Threading.Tasks;
 using Pulumi.Serialization;
 
-namespace Pulumi.Rdc
+namespace Pulumi.RunMyDarnContainer
 {
-    [RdcResourceType("rdc:index:AzureInstance")]
+    [RunMyDarnContainerResourceType("run-my-darn-container:index:AzureInstance")]
     public partial class AzureInstance : Pulumi.ComponentResource
     {
         /// <summary>
@@ -27,7 +27,7 @@ namespace Pulumi.Rdc
         /// <param name="args">The arguments used to populate this resource's properties</param>
         /// <param name="options">A bag of options that control this resource's behavior</param>
         public AzureInstance(string name, AzureInstanceArgs args, ComponentResourceOptions? options = null)
-            : base("rdc:index:AzureInstance", name, args ?? new AzureInstanceArgs(), MakeResourceOptions(options, ""), remote: true)
+            : base("run-my-darn-container:index:AzureInstance", name, args ?? new AzureInstanceArgs(), MakeResourceOptions(options, ""), remote: true)
         {
         }
 

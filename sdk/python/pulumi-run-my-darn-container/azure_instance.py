@@ -8,15 +8,15 @@ import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
 from . import _utilities
 
-__all__ = ['AWSInstanceArgs', 'AWSInstance']
+__all__ = ['AzureInstanceArgs', 'AzureInstance']
 
 @pulumi.input_type
-class AWSInstanceArgs:
+class AzureInstanceArgs:
     def __init__(__self__, *,
                  image: pulumi.Input[str],
                  port: pulumi.Input[int]):
         """
-        The set of arguments for constructing a AWSInstance resource.
+        The set of arguments for constructing a AzureInstance resource.
         :param pulumi.Input[str] image: The image you want to run
         """
         pulumi.set(__self__, "image", image)
@@ -44,7 +44,7 @@ class AWSInstanceArgs:
         pulumi.set(self, "port", value)
 
 
-class AWSInstance(pulumi.ComponentResource):
+class AzureInstance(pulumi.ComponentResource):
     @overload
     def __init__(__self__,
                  resource_name: str,
@@ -53,7 +53,7 @@ class AWSInstance(pulumi.ComponentResource):
                  port: Optional[pulumi.Input[int]] = None,
                  __props__=None):
         """
-        Create a AWSInstance resource with the given unique name, props, and options.
+        Create a AzureInstance resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] image: The image you want to run
@@ -62,17 +62,17 @@ class AWSInstance(pulumi.ComponentResource):
     @overload
     def __init__(__self__,
                  resource_name: str,
-                 args: AWSInstanceArgs,
+                 args: AzureInstanceArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        Create a AWSInstance resource with the given unique name, props, and options.
+        Create a AzureInstance resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
-        :param AWSInstanceArgs args: The arguments to use to populate this resource's properties.
+        :param AzureInstanceArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
         """
         ...
     def __init__(__self__, resource_name: str, *args, **kwargs):
-        resource_args, opts = _utilities.get_resource_args_opts(AWSInstanceArgs, pulumi.ResourceOptions, *args, **kwargs)
+        resource_args, opts = _utilities.get_resource_args_opts(AzureInstanceArgs, pulumi.ResourceOptions, *args, **kwargs)
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
@@ -95,7 +95,7 @@ class AWSInstance(pulumi.ComponentResource):
         else:
             if __props__ is not None:
                 raise TypeError('__props__ is only valid when passed in combination with a valid opts.id to get an existing resource')
-            __props__ = AWSInstanceArgs.__new__(AWSInstanceArgs)
+            __props__ = AzureInstanceArgs.__new__(AzureInstanceArgs)
 
             if image is None and not opts.urn:
                 raise TypeError("Missing required property 'image'")
@@ -104,8 +104,8 @@ class AWSInstance(pulumi.ComponentResource):
                 raise TypeError("Missing required property 'port'")
             __props__.__dict__["port"] = port
             __props__.__dict__["url"] = None
-        super(AWSInstance, __self__).__init__(
-            'rdc:index:AWSInstance',
+        super(AzureInstance, __self__).__init__(
+            'run-my-darn-container:index:AzureInstance',
             resource_name,
             __props__,
             opts,

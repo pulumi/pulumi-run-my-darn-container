@@ -26,7 +26,7 @@ func NewAppRunner(ctx *pulumi.Context, name string, args *AppRunnerArgs, opts ..
 
 	var err error
 
-	err = ctx.RegisterComponentResource("rdc:index:AppRunner", name, component, opts...)
+	err = ctx.RegisterComponentResource("run-my-darn-container:index:AppRunner", name, component, opts...)
 	if err != nil {
 		return nil, err
 	}

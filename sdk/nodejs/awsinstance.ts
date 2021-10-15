@@ -6,7 +6,7 @@ import * as utilities from "./utilities";
 
 export class AWSInstance extends pulumi.ComponentResource {
     /** @internal */
-    public static readonly __pulumiType = 'rdc:index:AWSInstance';
+    public static readonly __pulumiType = 'run-my-darn-container:index:AWSInstance';
 
     /**
      * Returns true if the given object is an instance of AWSInstance.  This is designed to work even
